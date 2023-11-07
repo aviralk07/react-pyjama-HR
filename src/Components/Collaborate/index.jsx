@@ -39,7 +39,9 @@ const Collaborate = ({ avatarSrc, username, bio }) => {
             width={600}
             height={500}
           />
+           <span className="_hj-tLbak__EmotionOption__expressionIcon"></span>
         </Col>
+       
       </Row>
     </Container>
   );

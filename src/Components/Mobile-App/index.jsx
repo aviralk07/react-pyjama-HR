@@ -1,36 +1,35 @@
 import React from "react";
 import "./style.css";
-import Button from "react-bootstrap/Button";
-import { ArrowCircleRight } from "@phosphor-icons/react";
+
 const MobileApp = (props) => {
   return (
     <div className="container2">
       <div className="premium">
-        <img
-          className="premium-img"
-          src="https://framerusercontent.com/images/nDTohinBuF4ENtGVGDTe1AwI9c.png?scale-down-to=512"
-          alt="Alternative Text"
-          width={100}
-          height={200}
-        />
-        <button className="pre-btn">
-          <span style={{ fontSize: "1.4em" }}>&#128293;</span> PREMIUM ADD-ONS
+        <button className="pre-btn mbn-btn">
+          <span style={{ fontSize: "17px" }}> 🚀 </span>
+          MOBILE APP
         </button>
 
         <h2>
-          Looking to close positions <span> faster? </span>{" "}
+          Now in your <span>pyjama</span> pockets too!{" "}
         </h2>
         <p>
-          Leverage add-ons like job boosts and tests to accelerate and improve
-          the quality of your hiring.
+          Always stay in the loop with the PyjamaHR mobile app, available on
+          Google Play Store and Apple App Store
         </p>
-        <Button className="btn1 ">
-          {props.signupText}{" "}
-          <span className="arrow-icon-hidden">
-            {/* <BsArrowRightCircleFill /> */}
-            <ArrowCircleRight size={30} color="#FFFFFF" weight="fill" />
-          </span>{" "}
-        </Button>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.pyjamahr.pyjamahr&pcampaignid=web_share"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            alt=""
+            width={170}
+            height={200}
+            className="google-play"
+          />
+        </a>
         <img
           src="https://framerusercontent.com/images/Skp2F5TR1lcTXjaw1Hsvdfh0PE.png"
           alt="Alternative Text"
@@ -38,6 +37,7 @@ const MobileApp = (props) => {
           height={280}
           className="premium-img1 premium-img2 "
         />
+       
       </div>
     </div>
   );

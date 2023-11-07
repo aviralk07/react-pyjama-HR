@@ -1,13 +1,28 @@
 .premium-img2 {
   transition: transform 0.3s;
   position: relative;
-  bottom: 220px;
+  bottom: 400px;
   left: 540px;
-  -ms-transform: rotate(-1deg); /* For Microsoft browsers like Internet Explorer */
-  -webkit-transform: rotate(-1deg); /* For WebKit-based browsers like older versions of Safari */
+  -ms-transform: rotate(
+    -30deg
+  ); /* For Microsoft browsers like Internet Explorer */
+  -webkit-transform: rotate(
+    -1deg
+  ); /* For WebKit-based browsers like older versions of Safari */
   transform: rotate(-1deg); /* For modern browsers */
 }
 
 .premium-img2:hover {
   transform: translateX(5px) rotate(1deg); /* Adjust the distance as needed */
+}
+
+.mbn-btn {
+  margin-top: 450px !important;
+  padding: 5px 15px !important;
+  position: relative !important;
+  font-size: 12px !important;
+}
+.google-play {
+  position: relative;
+  bottom: 70px;
 }
