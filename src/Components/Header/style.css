@@ -1,0 +1,149 @@
+:root {
+  --light-muted-purple: #6666ff;
+  --white: #ffffff;
+  --middle-muted-orange: #ee7759;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap");
+
+.Container {
+}
+
+.navbar {
+  box-sizing: border-box;
+  border: none ;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #fff; /* Change the background color if needed */
+  
+  list-style: none;
+  overflow: hidden;
+}
+.nav-bar-img img {
+  width: 200px; /* Set the width to 200 pixels */
+  position: relative;
+
+  left: 120px;
+}
+/* style.css */
+.left-align-nav {
+  margin-right: auto; /* Push the navigation items to the left */
+  position: relative;
+  left: 120px;
+  padding: 10px;
+}
+.link1{
+  text-decoration: none;
+  margin-top: 7px;
+}
+
+.nav-link-item {
+  margin-right: 20px; /* Adjust the value to control the spacing between Nav.Link items */
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+.nav-link-item:hover {
+  color: var(--light-muted-purple);
+}
+
+.nav-link-item1 {
+  color: var(--light-muted-purple);
+}
+
+/* .btn1 {
+  border-color: rgb(115, 87, 246); 
+  color: white;
+  background-color: rgb(115, 87, 246);
+}
+
+.btn1:hover {
+  background-color: rgb(115, 87, 246);
+  color: white;
+}
+
+.arrow-icon-hidden {
+  display: none; 
+}
+
+.btn1:hover .arrow-icon-hidden {
+  display: inline; 
+ 
+} */
+.btn1 {
+  background-color: var(--light-muted-purple);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0.7rem 1rem;
+  border: 0;
+  transition: all 0.5s;
+  border-radius: 10px;
+  width: auto;
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 30px;
+  margin-right: 100px;
+}
+
+.btn1 .arrow-icon-hidden {
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  left: 79%; /* Increase the left value to move the icon further right */
+  top: 21%; /* Increase the top value to move the icon further down */
+  right: 3%;
+  bottom: 0;
+}
+
+.btn1:hover {
+  background-color: var(--light-muted-purple);
+  transition: all 0.5;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 7px rgb(198, 187, 245);
+  padding: 1rem 2.5rem 1rem 1.4rem;
+}
+
+.btn1:hover .arrow-icon-hidden {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.arrow-icon-hidden {
+  font-size: 1.2rem;
+}
+
+/* Default styles for larger screens */
+/* ... Your existing CSS ... */
+
+/* Media query for smaller screens (up to 768px) */
+@media (max-width: 768px) {
+  .nav-bar-img img {
+    width: 150px; /* Reduce the width for smaller screens */
+    left: 0; /* Reset the left positioning */
+  }
+
+  .left-align-nav {
+    margin-right: 0; /* Reset the right margin */
+    left: 0; /* Reset the left positioning */
+  }
+
+  .nav-link-item {
+    margin-right: 10px; /* Reduce the spacing between Nav.Link items */
+  }
+
+  .nav-link-item1 {
+    margin-left: 10px; /* Reset the left margin for the "Login" link */
+  }
+
+  .btn1 {
+    margin-left: 0; /* Reset the left margin for the button */
+    margin-right: 20px; /* Reset the right margin for the button */
+    margin-top: 10px;
+  }
+}

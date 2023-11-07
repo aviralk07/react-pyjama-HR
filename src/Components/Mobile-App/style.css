@@ -1,0 +1,13 @@
+.premium-img2 {
+  transition: transform 0.3s;
+  position: relative;
+  bottom: 220px;
+  left: 540px;
+  -ms-transform: rotate(-1deg); /* For Microsoft browsers like Internet Explorer */
+  -webkit-transform: rotate(-1deg); /* For WebKit-based browsers like older versions of Safari */
+  transform: rotate(-1deg); /* For modern browsers */
+}
+
+.premium-img2:hover {
+  transform: translateX(5px) rotate(1deg); /* Adjust the distance as needed */
+}
