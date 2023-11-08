@@ -1,19 +1,27 @@
 .premium-img2 {
-  transition: transform 0.3s;
   position: relative;
   bottom: 400px;
   left: 540px;
-  -ms-transform: rotate(
-    -30deg
-  ); /* For Microsoft browsers like Internet Explorer */
-  -webkit-transform: rotate(
-    -1deg
-  ); /* For WebKit-based browsers like older versions of Safari */
-  transform: rotate(-1deg); /* For modern browsers */
+  -ms-transform: rotate(-30deg);
+  -webkit-transform: rotate(-1deg);
+  transform: rotate(-1deg);
+}
+
+.premium-img2.hovered::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .premium-img2:hover {
-  transform: translateX(5px) rotate(1deg); /* Adjust the distance as needed */
+  transform: translateX(5px) rotate(1deg);
+  cursor: pointer !important;
 }
 
 .mbn-btn {
@@ -22,7 +30,17 @@
   position: relative !important;
   font-size: 12px !important;
 }
+
 .google-play {
   position: relative;
   bottom: 70px;
+}
+
+.blue-dot {
+  position: absolute;
+  width: 55px; /* Adjust the size as needed */
+  height: 55px; /* Adjust the size as needed */
+  background-color: rgba(255, 255, 255, 0.619); /* White with 30% transparency */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }

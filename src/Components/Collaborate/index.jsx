@@ -3,8 +3,8 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 import "./style.css";
 const Collaborate = ({ avatarSrc, username, bio }) => {
   return (
-    <Container className="container" id="manage">
-      <Row className="row1">
+    <Container className="container" id="collaborate">
+      <Row className="row1 my4">
         <Col xs={12} md={6} className="col1 col2">
           <button className="btn3">Collaborate</button>
           <h4>Make better hiring decisions, together.</h4>
@@ -39,9 +39,7 @@ const Collaborate = ({ avatarSrc, username, bio }) => {
             width={600}
             height={500}
           />
-           <span className="_hj-tLbak__EmotionOption__expressionIcon"></span>
         </Col>
-       
       </Row>
     </Container>
   );

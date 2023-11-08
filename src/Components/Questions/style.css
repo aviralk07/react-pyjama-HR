@@ -1,0 +1,78 @@
+.ques-head {
+  text-align: center;
+  margin-top: -300px;
+}
+
+.ques-head h5 {
+  font-size: 16px;
+  width: 480px;
+  margin-left: 450px;
+  font-weight: 450;
+  font-family: "Poppins", sans-serif;
+  line-height: 30px;
+  margin-top: 20px;
+}
+
+.ques-head h1 {
+  font-size: 35px;
+  margin-top: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.ques-head button {
+  color: #ee7759 !important;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #e8e8e8 !important;
+  outline: none !important;
+  cursor: auto !important;
+  border-radius: 10px;
+  font-size: 13px;
+  padding: 3px 8px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.outer-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  width: 950px;
+  height: 110px;
+  position: relative;
+  padding: 20px 30px 20px 20px;
+  margin-left: 250px;
+}
+
+.outer-container h3 {
+  font-size: 17px;
+  margin-top: 17px;
+
+  font-family: "Poppins", sans-serif;
+}
+.outer-container h4 {
+  font-size: 16px;
+  width: 850px;
+  font-family: "Poppins", sans-serif;
+  line-height: 27px;
+  margin-top: 17px;
+}
+
+.toggle-button {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  position: absolute;
+  right: 0;
+  color: #000000; /* Change to your preferred text color */
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 30px;
+  margin-right: 8px;
+  margin-top: 17px;
+}
+
+.toggle-button:hover {
+}

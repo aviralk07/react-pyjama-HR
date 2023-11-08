@@ -9,6 +9,10 @@ import PremiumAddOns from "./Components/Primium";
 import Evaluate from "./Components/Evaluate";
 import Collaborate from "./Components/Collaborate";
 import MobileApp from "./Components/Mobile-App";
+import Obvious from "./Components/Obvious";
+import Questions from "./Components/Questions";
+
+
 const App = () => {
   const signupText = "Signup for FREE"; // Define the signupText here
   const signupText1 = "Know more"; // Define the signupText here
@@ -87,7 +91,13 @@ const App = () => {
           />
         </Routes>
         <Routes>
+          <Route path="/" element={<Obvious />} />
+        </Routes>
+        <Routes>
           <Route path="/" element={<MobileApp signupText={signupText1} />} />
+        </Routes>
+        <Routes>
+          <Route path="/" element={<Questions />} />
         </Routes>
       </div>
     </Router>

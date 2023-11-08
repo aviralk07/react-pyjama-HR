@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 const MobileApp = (props) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [dotPosition, setDotPosition] = useState({ x: 0, y: 0 });
+
+  const handleImageHover = (e) => {
+    const imageRect = e.target.getBoundingClientRect();
+    const x = e.clientX - imageRect.left;
+    const y = e.clientY - imageRect.top;
+    setDotPosition({ x, y });
+  };
+
+  const handleImageEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleImageLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div className="container2">
       <div className="premium">
@@ -30,14 +48,29 @@ const MobileApp = (props) => {
             className="google-play"
           />
         </a>
-        <img
-          src="https://framerusercontent.com/images/Skp2F5TR1lcTXjaw1Hsvdfh0PE.png"
-          alt="Alternative Text"
-          width={230}
-          height={280}
-          className="premium-img1 premium-img2 "
-        />
-       
+
+        <div
+          className="premium-img2"
+          onMouseEnter={handleImageEnter}
+          onMouseLeave={handleImageLeave}
+        >
+          <img
+            src="https://framerusercontent.com/images/Skp2F5TR1lcTXjaw1Hsvdfh0PE.png"
+            alt="Alternative Text"
+            width={230}
+            height={280}
+            onMouseMove={handleImageHover}
+          />
+          {isHovered && dotPosition.x !== 0 && dotPosition.y !== 0 && (
+            <div
+              className="blue-dot"
+              style={{
+                left: `${dotPosition.x}px`,
+                top: `${dotPosition.y}px`,
+              }}
+            ></div>
+          )}
+        </div>
       </div>
     </div>
   );
