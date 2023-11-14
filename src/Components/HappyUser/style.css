@@ -1,0 +1,91 @@
+/* style.css */
+
+.row-with-border {
+  border: 2px solid rgb(238, 238, 238);
+  padding: 110px;
+  text-align: center;
+  margin: 20px;
+  background-color: #ffffff;
+  border-radius: 25px;
+}
+
+.row-with-border button {
+  padding: 10px 20px;
+
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.row-with-border h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.row-with-border h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.row-with-border .avatar-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row-with-border .avatar {
+  margin: 10px;
+}
+.happyuser .btn3 {
+  color: #ee7759 !important;
+  background-color: #fff;
+  border: 1px solid #d6d6d6;
+  font-size: 12px;
+  padding: 3px 5px;
+  border-radius: 9px;
+  position: relative;
+  right: 180px;
+}
+.happyuser .btn1 {
+  padding: 1rem 2.5rem 1rem 1.4rem;
+  margin-right: 30px;
+  font-size: 18px;
+  position: absolute;
+  left: 240px;
+}
+.happyuser .btn1:hover {
+  padding: 15px 45px;
+}
+
+.happyuser h2 {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: left;
+  width: 500px;
+}
+.happyuser h2 span {
+  color: #ee7759 !important;
+}
+
+h5 {
+  font-weight: 500;
+  font-size: 20px !important;
+  margin-bottom: 30px !important;
+}
+
+h5 span {
+  color: #6666ff;
+}
+
+.row-avt {
+  margin-right: 20px;
+  position: relative;
+  left: 20px;
+  margin-bottom: 20px;
+  
+}
+.row-avt1 {
+  margin-right: 20px;
+}

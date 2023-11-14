@@ -23,10 +23,7 @@ const MobileApp = (props) => {
   return (
     <div className="container2">
       <div className="premium">
-        <button className="pre-btn mbn-btn">
-          <span style={{ fontSize: "17px" }}> 🚀 </span>
-          MOBILE APP
-        </button>
+        {props.buttonProp}
 
         <h2>
           Now in your <span>pyjama</span> pockets too!{" "}

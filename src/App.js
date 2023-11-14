@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import NavScrollExample from "./Components/Header";
 import Home from "./Components/Home";
 import MyCard from "./Components/Card";
@@ -11,12 +12,20 @@ import Collaborate from "./Components/Collaborate";
 import MobileApp from "./Components/Mobile-App";
 import Obvious from "./Components/Obvious";
 import Questions from "./Components/Questions";
-
+import HappyUser from "./Components/HappyUser";
+import Footer from "./Components/Footer";
+import Login from "./Components/Login";
 
 const App = () => {
   const signupText = "Signup for FREE"; // Define the signupText here
   const signupText1 = "Know more"; // Define the signupText here
 
+  const buttonProp = (
+    <button className="pre-btn mbn-btn">
+      <span style={{ fontSize: "17px" }}> 🚀 </span>
+      MOBILE APP
+    </button>
+  );
   return (
     <Router>
       <div className="App">
@@ -59,7 +68,12 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<PremiumAddOns signupText={signupText1} />}
+            element={
+              <PremiumAddOns
+                signupText={signupText1}
+                logo="/Assets/images/pyjama-logo.png"
+              />
+            }
           />
         </Routes>
         <Routes>
@@ -94,10 +108,34 @@ const App = () => {
           <Route path="/" element={<Obvious />} />
         </Routes>
         <Routes>
-          <Route path="/" element={<MobileApp signupText={signupText1} />} />
+          <Route
+            path="/"
+            element={
+              <MobileApp signupText={signupText1} buttonProp={buttonProp} />
+            }
+          />
         </Routes>
         <Routes>
           <Route path="/" element={<Questions />} />
+        </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HappyUser buttonProp={buttonProp} signupText={signupText} />
+            }
+          />
+        </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={<Footer />}
+            logo="/Assets/images/pyjama-logo.png"
+          />
+        </Routes>
+        <Routes>
+          {/* Add a new route for the Login component */}
+          <Route path="/login" element={<Login />} />>
         </Routes>
       </div>
     </Router>
