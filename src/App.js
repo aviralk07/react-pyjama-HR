@@ -15,7 +15,7 @@ import Questions from "./Components/Questions";
 import HappyUser from "./Components/HappyUser";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
-
+import Signup from "./Components/sign-up";
 const App = () => {
   const signupText = "Signup for FREE"; // Define the signupText here
   const signupText1 = "Know more"; // Define the signupText here
@@ -135,7 +135,12 @@ const App = () => {
         </Routes>
         <Routes>
           {/* Add a new route for the Login component */}
-          <Route path="/login" element={<Login />} />>
+          <Route path="/login" element={<Login />} />
+         
+        </Routes>
+        <Routes>
+          {/* ... other routes */}
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>
     </Router>

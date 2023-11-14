@@ -1,25 +1,23 @@
-// Login.jsx
-
 import React from "react";
+
+import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
 import "./style.css"; // Import the external CSS file
-import { Link } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
+  
   const responseGoogle = (response) => {
     console.log(response);
   };
 
   return (
-    
     <Container className="container-center">
-   
-      
+      <br />
+      <br />
+      <br />
       <Row>
-      
         <Col>
-       
           <h1 className="main-heading">
             Recruitment software for companies that want to scale faster
           </h1>
@@ -44,7 +42,7 @@ const Login = () => {
         </Col>
 
         <Col>
-          <div className="login-container">
+          <div className="login-container sign-container">
             {/* Google Login Button */}
             <GoogleLogin
               className="google-login1"
@@ -65,7 +63,7 @@ const Login = () => {
             <div className="login-options-container">
               <hr />
               <span className="login-option-text">
-                Or, Log in with your email
+                Or, Sign up with your email
               </span>
               <hr />
             </div>
@@ -82,17 +80,46 @@ const Login = () => {
                 <label htmlFor="username2" id="username2">
                   Password <span> *</span>
                 </label>{" "}
-                <label htmlFor="username2" id="username3">
-                  Forgot Password?
+                <br />
+                <input type="password" className="username2" name="username2" />
+              </div>
+              <div>
+                <label htmlFor="username2" id="username2">
+                  Company Name <span> *</span>
                 </label>{" "}
                 <br />
                 <input type="password" className="username2" name="username2" />
               </div>
+              <div>
+                <label htmlFor="username2" id="username2">
+
+                  Phone Number <span> *</span>
+                  <input type="text" />
+                </label>{" "}
+                <br />
+               
+              </div>
             </div>
-            <button className="login-button">Log in</button>
+            <div>
+              {/* Your other signup content goes here */}
+
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check
+                  type="checkbox"
+                  label={
+                    <span>
+                      I agree to the{" "}
+                      <span style={{ color: "#5d78ff" }}>
+                        Terms & Conditions
+                      </span>
+                    </span>
+                  }
+                />
+              </Form.Group>
+            </div>
+            <button className="login-button">Sign up</button>
             <p className="login-para">
-              Don't have an account ?<Link to="/signup">Click here</Link> to
-              Signup
+              You can edit your job once you signup to PyjamaHR
             </p>
           </div>
         </Col>
@@ -148,4 +175,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

@@ -5,12 +5,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  
   background-image: url("https://static.vecteezy.com/system/resources/thumbnails/003/127/955/small_2x/abstract-white-and-grey-background-with-dynamic-waves-shape-free-vector.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.container-center {
+  overflow: hidden !important;
+  overflow-y: hidden !important;
 }
 
 /* Styles for the main heading */
@@ -135,11 +139,9 @@
 }
 
 #username3:hover {
-    color: #4161ff;
-    text-decoration: underline rgb(180, 180, 180 ) ;
+  color: #4161ff;
+  text-decoration: underline rgb(180, 180, 180);
 }
-
-
 
 .username1,
 .username2 {
@@ -165,9 +167,9 @@
 }
 
 .login-para {
-    font-size: 13.5px;
-    margin-top: 12px;
-    margin-left: 37px;
+  font-size: 13.5px;
+  margin-top: 12px;
+  margin-left: 37px;
 }
 .login-para button {
   border: none;
