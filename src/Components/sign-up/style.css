@@ -1,9 +1,137 @@
-.sign-container {
- 
-}
-
-.container-center {
+.container-center1 {
   overflow: hidden !important;
   overflow-y: hidden !important;
-  
+  margin-top: 100px;
+}
+
+.sign-container {
+  height: 560px;
+  position: relative;
+  bottom: 60px;
+}
+.error-container {
+  height: 600px; /* Adjust the height as needed */
+}
+
+/* MyPhoneInput.css */
+
+.phone-input-container {
+  display: flex;
+  align-items: center; /* Optional: Adjust alignment as needed */
+}
+
+.my-phone-input {
+  padding: 0.5rem;
+  font-size: 16px;
+
+  margin-right: 10px; /* Optional: Add some spacing between PhoneInput and error message */
+}
+.PhoneInputInput {
+  position: relative;
+  bottom: 68px;
+  left: 190px;
+  height: 37px;
+  border-color: rgb(219, 219, 219) !important;
+  border-radius: 5px;
+  border: 1px solid;
+}
+.PhoneInputCountryIconImg {
+  position: relative;
+  bottom: 37px;
+  left: 150px;
+  width: 30px;
+}
+
+.my-phone-input:invalid {
+  border: 8px solid red;
+}
+
+.error-message {
+  color: #fd397a;
+  font-size: 11px;
+}
+
+.error-message1 {
+  margin-left: 20px;
+  color: #fd397a;
+  font-size: 11px;
+}
+
+/* Targeting the international text input */
+.my-phone-input
+  .react-phone-number-input__country
+  .react-phone-number-input__country-select {
+  width: 10px !important; /* Adjust the width as needed */
+}
+.PhoneInputCountrySelect {
+  width: 130px;
+  height: 37px;
+  border-color: rgb(219, 219, 219) !important;
+  border-radius: 5px;
+  position: relative;
+  left: 13px;
+  bottom: 7px;
+}
+
+.password-con {
+  position: relative;
+  top: 10px;
+}
+
+.company-con {
+  position: relative;
+  bottom: 7px;
+}
+
+.check1 {
+  font-size: 14px;
+}
+
+/* form check */
+.form-check {
+  margin-top: -60px;
+  margin-left: 20px;
+}
+
+.sign-up-btn {
+  margin-top: 9px;
+  opacity: 0.6; /* Initial opacity for the button */
+  transition: opacity 0.5s ease; /* Add a transition for a smoother effect */
+  position: relative;
+  bottom: 10px;
+}
+
+.sign-up-btn.active {
+  opacity: 1; /* Normal opacity when the checkbox is checked */
+}
+
+.sign-para {
+  margin-right: 80px !important;
+  font-size: 12px !important;
+  width: 100%;
+  position: relative;
+  right: 15px;
+  bottom: 12px;
+}
+
+.password-con1 {
+  position: relative !important;
+}
+.fa-btn1-container {
+  position: relative !important;
+}
+
+.fa-btn1 {
+  border: none;
+  background-color: transparent;
+  position: absolute ;
+  right: 15%;
+  top: -20px;
+  transform: translateY(-50%);
+  z-index: 1;
+  margin-right: -20px;
+}
+
+.logo-sign {
+  bottom: 230px;
 }

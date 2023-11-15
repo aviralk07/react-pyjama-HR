@@ -15,7 +15,7 @@ import Questions from "./Components/Questions";
 import HappyUser from "./Components/HappyUser";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
-import Signup from "./Components/sign-up";
+import Signup from "./Components/Sign-up";
 const App = () => {
   const signupText = "Signup for FREE"; // Define the signupText here
   const signupText1 = "Know more"; // Define the signupText here

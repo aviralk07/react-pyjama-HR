@@ -1,25 +1,45 @@
 // Login.jsx
 
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
 import "./style.css"; // Import the external CSS file
 import { Link } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [isValidPassword, setIsValidPassword] = useState(true);
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
   const responseGoogle = (response) => {
     console.log(response);
   };
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const validatePassword = (value) => {
+    setPassword(value);
+    const isValid = value.length >= 8;
+    setIsValidPassword(isValid);
+  };
+
+  const validateEmail = (value) => {
+    setEmail(value);
+
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Check if the email matches the regex
+    setIsValidEmail(emailRegex.test(value));
+  };
 
   return (
-    
     <Container className="container-center">
-   
-      
       <Row>
-      
         <Col>
-       
           <h1 className="main-heading">
             Recruitment software for companies that want to scale faster
           </h1>
@@ -44,7 +64,14 @@ const Login = () => {
         </Col>
 
         <Col>
-          <div className="login-container">
+        <div
+            className={`login-container  ${
+              !isValidEmail ||
+              !isValidPassword 
+                ? "error-container1"
+                : ""
+            }`}
+          >
             {/* Google Login Button */}
             <GoogleLogin
               className="google-login1"
@@ -75,7 +102,15 @@ const Login = () => {
                   Work email id <span> *</span>
                 </label>
                 <br />
-                <input type="email" className="username1" name="username1" />
+                <input
+                  type="email"
+                  className={`username1 ${isValidEmail ? "" : "invalid"}`}
+                  name="username1"
+                  onChange={(e) => validateEmail(e.target.value)}
+                />
+                {!isValidEmail && (
+                  <p className="error-message1">Please enter a valid email.</p>
+                )}
               </div>
 
               <div>
@@ -86,7 +121,25 @@ const Login = () => {
                   Forgot Password?
                 </label>{" "}
                 <br />
-                <input type="password" className="username2" name="username2" />
+                <input
+                  type={showPassword ? "text" : "password"}
+                  className={`username2 ${isValidPassword ? "" : "invalid"}`}
+                  name="username2"
+                  value={password}
+                  onChange={(e) => validatePassword(e.target.value)}
+                />
+                {!isValidPassword && (
+                  <p className="error-message1">
+                    Please enter a valid password.
+                  </p>
+                )}
+                <button
+                  className=" log-btn1"
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                >
+                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                </button>
               </div>
             </div>
             <button className="login-button">Log in</button>

@@ -1,18 +1,116 @@
-import React from "react";
-
+import React, { useState } from "react";
+import PhoneInput from "react-phone-number-input";
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
 import "./style.css"; // Import the external CSS file
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { isValidPhoneNumber } from "libphonenumber-js";
 
 const Signup = () => {
-  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [isValidPassword, setIsValidPassword] = useState(true);
+  const [isValidCompanyName, setIsValidCompanyName] = useState(true);
+  const [isValidPhone, setIsValidPhone] = useState(true);
+  const REQUIRED_DIGITS = 12;
+  const [termsChecked, setTermsChecked] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const [emailErrorMessage, setEmailErrorMessage] = useState("");
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
+  const [companyNameErrorMessage, setCompanyNameErrorMessage] = useState("");
+  const [phoneErrorMessage, setPhoneErrorMessage] = useState("");
+  const [generalErrorMessage, setGeneralErrorMessage] = useState("");
+
   const responseGoogle = (response) => {
     console.log(response);
   };
 
+  const handlePhoneChange = (value) => {
+    const numericValue = value.replace(/\D/g, ""); // Remove non-numeric characters
+    setPhoneNumber(`+${numericValue}`); // Ensure international format
+
+    setIsValidPhone(numericValue.length === REQUIRED_DIGITS);
+  };
+
+  const validateEmail = (value) => {
+    setEmail(value);
+
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Check if the email matches the regex
+    setIsValidEmail(emailRegex.test(value));
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const validatePassword = (value) => {
+    setPassword(value);
+    const isValid = value.length >= 8;
+    setIsValidPassword(isValid);
+  };
+
+  const validateCompanyName = (value) => {
+    setCompanyName(value);
+
+    // Your company name validation logic
+    const isValid = value.trim().length > 3;
+    setIsValidCompanyName(isValid);
+  };
+
+  const handleSubmit = () => {
+    // Reset previous error messages
+    setEmailErrorMessage("");
+    setPasswordErrorMessage("");
+    setCompanyNameErrorMessage("");
+    setPhoneErrorMessage("");
+    setGeneralErrorMessage("");
+
+    // Collect and display all error messages
+    if (!isValidEmail) {
+      setEmailErrorMessage("Please enter a valid email.");
+    }
+
+    if (!isValidPassword) {
+      setPasswordErrorMessage("Please enter a valid password.");
+    }
+
+    if (!isValidCompanyName) {
+      setCompanyNameErrorMessage("Please enter a valid company name.");
+    }
+
+    if (!isValidPhone) {
+      setPhoneErrorMessage("Please enter a valid phone number.");
+    }
+
+    if (!termsChecked) {
+      setGeneralErrorMessage("Please agree to the Terms & Conditions.");
+    }
+
+    // Check all validation states
+    const isFormValid =
+      isValidEmail &&
+      isValidPassword &&
+      isValidCompanyName &&
+      isValidPhone &&
+      termsChecked;
+
+    if (isFormValid) {
+      // Perform your actual form submission logic here
+      console.log("Form submitted successfully!");
+    }
+  };
+
   return (
-    <Container className="container-center">
+    <Container className="container-center1">
       <br />
       <br />
       <br />
@@ -42,7 +140,15 @@ const Signup = () => {
         </Col>
 
         <Col>
-          <div className="login-container sign-container">
+          <div
+            className={`login-container sign-container ${
+              (!isValidEmail ||
+                !isValidPassword ||
+                !isValidCompanyName ||
+                !isValidPhone) &&
+              "error-container"
+            }`}
+          >
             {/* Google Login Button */}
             <GoogleLogin
               className="google-login1"
@@ -69,42 +175,110 @@ const Signup = () => {
             </div>
             <div className="login-form">
               <div>
-                <label htmlFor="username1" id="username1">
+                <label
+                  htmlFor="username1"
+                  id="username1"
+                  className="username1-1"
+                >
                   Work email id <span> *</span>
                 </label>
                 <br />
-                <input type="email" className="username1" name="username1" />
+                <input
+                  type="email"
+                  className={`username1 ${isValidEmail ? "" : "invalid"}`}
+                  name="username1"
+                  onChange={(e) => {
+                    validateEmail(e.target.value);
+                    setEmailErrorMessage(""); // Reset error message on change
+                  }}
+                />
+                {!isValidEmail && (
+                  <p className="error-message1">{emailErrorMessage}</p>
+                )}
               </div>
 
-              <div>
+              <div className="password-con">
                 <label htmlFor="username2" id="username2">
                   Password <span> *</span>
                 </label>{" "}
                 <br />
-                <input type="password" className="username2" name="username2" />
+                <input
+                  type={showPassword ? "text" : "password"}
+                  className={`username2 password-con1 ${
+                    isValidPassword ? "" : "invalid"
+                  }`}
+                  name="username2"
+                  value={password}
+                  onChange={(e) => {
+                    validatePassword(e.target.value);
+                    setPasswordErrorMessage(""); // Reset error message on change
+                  }}
+                />
+                {!isValidPassword && (
+                  <p className="error-message1">
+                    Please enter a valid password.
+                  </p>
+                )}
+                <div className="fa-btn1-container">
+                  <button
+                    className="fa-btn1"
+                    type="button"
+                    onClick={togglePasswordVisibility}
+                  >
+                    <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                  </button>
+                </div>
               </div>
-              <div>
+              <br />
+              <div className="company-con">
                 <label htmlFor="username2" id="username2">
                   Company Name <span> *</span>
                 </label>{" "}
                 <br />
-                <input type="password" className="username2" name="username2" />
+                <input
+                  type="text"
+                  className={`username2 ${isValidCompanyName ? "" : "invalid"}`}
+                  name="username2"
+                  onChange={(e) => {
+                    validateCompanyName(e.target.value);
+                    setCompanyNameErrorMessage(""); // Reset error message on change
+                  }}
+                />
+                {!isValidCompanyName && (
+                  <p className="error-message1">
+                    Please enter a valid company name.
+                  </p>
+                )}
               </div>
-              <div>
-                <label htmlFor="username2" id="username2">
 
+              <div>
+                <label id="username2" htmlFor="phone">
                   Phone Number <span> *</span>
-                  <input type="text" />
-                </label>{" "}
-                <br />
-               
+                </label>
+                <div className="phone-input-container">
+                  <PhoneInput
+                    international
+                    defaultCountry="US"
+                    value={phoneNumber}
+                    onChange={handlePhoneChange}
+                    className={`my-phone-input ${
+                      isValidPhone ? "" : "invalid"
+                    }`} // Assign a className
+                  />
+                  {!isValidPhone && (
+                    <p className="error-message">
+                      Please enter a valid phone number.
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
+
             <div>
               {/* Your other signup content goes here */}
-
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
+                  className="check1"
                   type="checkbox"
                   label={
                     <span>
@@ -114,11 +288,25 @@ const Signup = () => {
                       </span>
                     </span>
                   }
+                  id="termsCheckbox"
+                  onChange={() => setTermsChecked(!termsChecked)}
+                  checked={termsChecked}
                 />
               </Form.Group>
             </div>
-            <button className="login-button">Sign up</button>
-            <p className="login-para">
+            <button
+              className={`login-button sign-up-btn ${
+                termsChecked ? "active" : ""
+              }`}
+              disabled={!termsChecked}
+              onClick={handleSubmit} // Add your actual onClick function
+            >
+              Sign up
+            </button>
+            {!termsChecked && (
+              <p className="error-message1">{generalErrorMessage}</p>
+            )}
+            <p className="login-para sign-para">
               You can edit your job once you signup to PyjamaHR
             </p>
           </div>
@@ -130,21 +318,21 @@ const Signup = () => {
           <img
             src="https://app.pyjamahr.com/_next/static/image/public/images/sugar_logo.e610d15f3f7bbf6f677184e09147051c.svg"
             alt=""
-            className="logo-login"
+            className="logo-login logo-sign"
           />
         </Col>
         <Col>
           <img
             src="https://app.pyjamahr.com/_next/static/image/public/images/tartan_logo.aedad9ef7634f1c0692eab5149af2dfc.svg"
             alt=""
-            className="logo-login"
+            className="logo-login logo-sign"
           />
         </Col>
         <Col>
           <img
             src="https://app.pyjamahr.com/_next/static/image/public/images/market_plus_logo.5cd8f577a87a291bbbe3259522840875.svg"
             alt=""
-            className="logo-login"
+            className="logo-login logo-sign"
           />
         </Col>
       </Row>
@@ -153,21 +341,21 @@ const Signup = () => {
           <img
             src="https://app.pyjamahr.com/_next/static/image/public/images/volopay_logo.a7cca95b18999fcf68f6f32a568bab8a.svg"
             alt=""
-            className="logo-login"
+            className="logo-login logo-sign"
           />
         </Col>
         <Col>
           <img
             src="https://app.pyjamahr.com/_next/static/image/public/images/masai_logo.730c64820a00366bdfd6a5b95b1cbaff.svg"
             alt=""
-            className="logo-login"
+            className="logo-login logo-sign"
           />
         </Col>
         <Col>
           <img
             src="https://app.pyjamahr.com/_next/static/image/public/images/orange_health_logo.9e39bb968aa793aaaeaed34b7895ace2.svg"
             alt=""
-            className="logo-login logo-login1"
+            className="logo-login logo-login1 logo-sign"
           />
         </Col>
       </Row>
