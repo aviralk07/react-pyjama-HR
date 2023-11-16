@@ -37,7 +37,7 @@ const Home = (props) => {
               <ArrowCircleRight size={30} color="#FFFFFF" weight="fill" />
             </span>{" "}
           </Button>
-          <button className="demo">Get a demo</button>
+         
         </div>
       </div>
       <div className="img-logo">

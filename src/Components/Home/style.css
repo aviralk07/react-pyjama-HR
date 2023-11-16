@@ -16,7 +16,7 @@
 
 .center-content-pp {
   color: var(--middle-muted-orange);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 2px;
   position: absolute;
   top: 230px;
@@ -28,22 +28,22 @@
   font-weight: 500;
   margin-top: 220px;
   margin-bottom: 10px;
-  position: relative;
+  font-size: 14.8px;
   letter-spacing: 0.8px;
-  width: 440px;
+  width: 400px;
   text-align: center;
   font-family: Poppins, sans-serif;
   line-height: 2;
   position: relative;
-  top: 40px;
-  left: 50px;
+  top: 10px;
+  left: 30px;
 }
 
 .center-content h2 {
   font-size: 45px;
   width: 700px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 630;
   position: absolute;
   top: 280px;
   font-family: Poppins, sans-serif;
@@ -56,20 +56,8 @@
 .btn1-1 {
   padding: 15px 34px 15px 34px;
   font-size: 20px;
-}
-
-.demo {
-  border-radius: 7px;
-  border: 1px solid gray;
-  background-color: white;
-  padding: 15px 38px 13px 38px;
-  font-size: 20px;
-  position: relative;
-  top: 5px;
-  right: 50px;
-  font-weight: 450;
-  font-family: Poppins, sans-serif;
-  margin-top: 50px;
+  margin-left: 130px;
+  margin-top: 20px;
 }
 
 /* externalStyles.css */
@@ -119,17 +107,10 @@
   .btn1-1 {
     font-size: 20px;
     padding: 15px 50px 15px 40px;
-    margin-top: 40px;
-    left: 75px;
-    top: 30px;
-  }
-  .demo {
-    font-size: 20px;
-    padding: 15px 60px 15px 60px;
-    margin-top: 40px;
-    position: relative;
-    left: 70px;
-    top: 20px;
+    
+   
+    left: 175px!important;
+    top: 60px;
   }
 
   .img-logo-image {
@@ -153,8 +134,7 @@
     }
   }
 }
-.img-logo {
-}
+
 /* Apply the animation to the images */
 .img-logo-image {
   /* Existing styles */

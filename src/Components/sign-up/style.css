@@ -5,12 +5,12 @@
 }
 
 .sign-container {
-  height: 560px;
+  height: 580px;
   position: relative;
   bottom: 60px;
 }
 .error-container {
-  height: 600px; /* Adjust the height as needed */
+  height: 620px; /* Adjust the height as needed */
 }
 
 /* MyPhoneInput.css */
@@ -124,7 +124,7 @@
 .fa-btn1 {
   border: none;
   background-color: transparent;
-  position: absolute ;
+  position: absolute;
   right: 15%;
   top: -20px;
   transform: translateY(-50%);
@@ -132,6 +132,14 @@
   margin-right: -20px;
 }
 
+
 .logo-sign {
-  bottom: 230px;
+  bottom: 270px;
+ 
+  
+}
+
+.erro-mess {
+  position: relative;
+  bottom: 10px;
 }

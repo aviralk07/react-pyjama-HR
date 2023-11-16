@@ -1,5 +1,3 @@
-// Login.jsx
-
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
@@ -7,15 +5,23 @@ import "./style.css"; // Import the external CSS file
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
 const Login = () => {
+  const responseGoogle = (response) => {
+    console.log("responseGoogle function called");
+    if (response.error) {
+      console.error("Google login error:", response.error);
+    } else {
+      console.log("Google login success:", response);
+    }
+  };
+
   const [showPassword, setShowPassword] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(true);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const responseGoogle = (response) => {
-    console.log(response);
-  };
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -36,6 +42,32 @@ const Login = () => {
     setIsValidEmail(emailRegex.test(value));
   };
 
+  const handleLogin = () => {
+    // Validate email and password
+    validateEmail(email);
+    validatePassword(password);
+
+    // Check if email and password are valid
+    if (!isValidEmail || !isValidPassword) {
+      console.log("Login failed. Please check your credentials.");
+      return;
+    }
+
+    // Simulating a login process with success and failure scenarios
+    console.log("Attempting to log in...");
+
+    setTimeout(() => {
+      const isLoginSuccessful = /* Replace this with your actual logic for success or failure */ true;
+
+      if (isLoginSuccessful) {
+        console.log("Login successful!");
+        // Redirect to the dashboard or update state to indicate successful login
+      } else {
+        console.log("Login failed. Please check your credentials.");
+        // Update state or display an error message to inform the user about the failed login
+      }
+    }, 1000);
+  };
   return (
     <Container className="container-center">
       <Row>
@@ -64,12 +96,9 @@ const Login = () => {
         </Col>
 
         <Col>
-        <div
+          <div
             className={`login-container  ${
-              !isValidEmail ||
-              !isValidPassword 
-                ? "error-container1"
-                : ""
+              !isValidEmail || !isValidPassword ? "error-container1" : ""
             }`}
           >
             {/* Google Login Button */}
@@ -121,28 +150,36 @@ const Login = () => {
                   Forgot Password?
                 </label>{" "}
                 <br />
-                <input
-                  type={showPassword ? "text" : "password"}
-                  className={`username2 ${isValidPassword ? "" : "invalid"}`}
-                  name="username2"
-                  value={password}
-                  onChange={(e) => validatePassword(e.target.value)}
-                />
+                <div
+                  className={`password-container ${
+                    isValidPassword ? "" : "invalid"
+                  }`}
+                >
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    className="username2"
+                    name="username2"
+                    value={password}
+                    onChange={(e) => validatePassword(e.target.value)}
+                  />
+                  <button
+                    className="log-btn1"
+                    type="button"
+                    onClick={togglePasswordVisibility}
+                  >
+                    <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                  </button>
+                </div>
                 {!isValidPassword && (
-                  <p className="error-message1">
+                  <p className="error-message1 errormess2">
                     Please enter a valid password.
                   </p>
                 )}
-                <button
-                  className=" log-btn1"
-                  type="button"
-                  onClick={togglePasswordVisibility}
-                >
-                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-                </button>
               </div>
             </div>
-            <button className="login-button">Log in</button>
+            <button className="login-button" onClick={handleLogin}>
+              Log in
+            </button>
             <p className="login-para">
               Don't have an account ?<Link to="/signup">Click here</Link> to
               Signup

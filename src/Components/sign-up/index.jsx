@@ -21,12 +21,6 @@ const Signup = () => {
   const [termsChecked, setTermsChecked] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const [emailErrorMessage, setEmailErrorMessage] = useState("");
-  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
-  const [companyNameErrorMessage, setCompanyNameErrorMessage] = useState("");
-  const [phoneErrorMessage, setPhoneErrorMessage] = useState("");
-  const [generalErrorMessage, setGeneralErrorMessage] = useState("");
-
   const responseGoogle = (response) => {
     console.log(response);
   };
@@ -67,47 +61,33 @@ const Signup = () => {
   };
 
   const handleSubmit = () => {
-    // Reset previous error messages
-    setEmailErrorMessage("");
-    setPasswordErrorMessage("");
-    setCompanyNameErrorMessage("");
-    setPhoneErrorMessage("");
-    setGeneralErrorMessage("");
+    // Validation flags
+    const isEmailValid = isValidEmail && email.trim() !== "";
+    const isPasswordValid = isValidPassword && password.trim() !== "";
+    const isCompanyNameValid = isValidCompanyName && companyName.trim() !== "";
+    const isPhoneValid = isValidPhone && phoneNumber.trim() !== "";
 
-    // Collect and display all error messages
-    if (!isValidEmail) {
-      setEmailErrorMessage("Please enter a valid email.");
-    }
+    // Update validation state
+    setIsValidEmail(isEmailValid);
+    setIsValidPassword(isPasswordValid);
+    setIsValidCompanyName(isCompanyNameValid);
+    setIsValidPhone(isPhoneValid);
 
-    if (!isValidPassword) {
-      setPasswordErrorMessage("Please enter a valid password.");
-    }
-
-    if (!isValidCompanyName) {
-      setCompanyNameErrorMessage("Please enter a valid company name.");
-    }
-
-    if (!isValidPhone) {
-      setPhoneErrorMessage("Please enter a valid phone number.");
-    }
-
-    if (!termsChecked) {
-      setGeneralErrorMessage("Please agree to the Terms & Conditions.");
-    }
-
-    // Check all validation states
-    const isFormValid =
-      isValidEmail &&
-      isValidPassword &&
-      isValidCompanyName &&
-      isValidPhone &&
-      termsChecked;
-
-    if (isFormValid) {
-      // Perform your actual form submission logic here
-      console.log("Form submitted successfully!");
+    // Check if all fields are valid
+    if (
+      isEmailValid &&
+      isPasswordValid &&
+      isCompanyNameValid &&
+      isPhoneValid &&
+      termsChecked
+    ) {
+      // Perform signup logic
+      // For example, you can submit the form or navigate to the next step
+      console.log("Form submitted!");
     }
   };
+
+  // Check all validation states
 
   return (
     <Container className="container-center1">
@@ -189,11 +169,14 @@ const Signup = () => {
                   name="username1"
                   onChange={(e) => {
                     validateEmail(e.target.value);
-                    setEmailErrorMessage(""); // Reset error message on change
+                    // Reset error message on change
                   }}
                 />
                 {!isValidEmail && (
-                  <p className="error-message1">{emailErrorMessage}</p>
+                  <p className="error-message1">
+                    {" "}
+                    Please enter a valid email address.
+                  </p>
                 )}
               </div>
 
@@ -202,33 +185,36 @@ const Signup = () => {
                   Password <span> *</span>
                 </label>{" "}
                 <br />
-                <input
-                  type={showPassword ? "text" : "password"}
-                  className={`username2 password-con1 ${
-                    isValidPassword ? "" : "invalid"
-                  }`}
-                  name="username2"
-                  value={password}
-                  onChange={(e) => {
-                    validatePassword(e.target.value);
-                    setPasswordErrorMessage(""); // Reset error message on change
-                  }}
-                />
-                {!isValidPassword && (
-                  <p className="error-message1">
-                    Please enter a valid password.
-                  </p>
-                )}
-                <div className="fa-btn1-container">
-                  <button
-                    className="fa-btn1"
-                    type="button"
-                    onClick={togglePasswordVisibility}
-                  >
-                    <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-                  </button>
-                </div>
-              </div>
+                <div className="password-container">
+  <input
+    type={showPassword ? "text" : "password"}
+    className={`username2 password-con1 ${
+      isValidPassword ? "" : "invalid"
+    }`}
+    name="username2"
+    value={password}
+    onChange={(e) => {
+      validatePassword(e.target.value);
+      // Reset error message on change
+    }}
+  />
+  <div className="fa-btn1-container">
+    <button
+      className="fa-btn1"
+      type="button"
+      onClick={togglePasswordVisibility}
+    >
+      <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+    </button>
+  </div>
+</div>
+{!isValidPassword && (
+  <p className="error-message1">
+    Please enter a valid password.
+  </p>
+)}
+</div>
+
               <br />
               <div className="company-con">
                 <label htmlFor="username2" id="username2">
@@ -241,7 +227,7 @@ const Signup = () => {
                   name="username2"
                   onChange={(e) => {
                     validateCompanyName(e.target.value);
-                    setCompanyNameErrorMessage(""); // Reset error message on change
+                    // Reset error message on change
                   }}
                 />
                 {!isValidCompanyName && (
@@ -266,7 +252,7 @@ const Signup = () => {
                     }`} // Assign a className
                   />
                   {!isValidPhone && (
-                    <p className="error-message">
+                    <p className="error-message erro-mess">
                       Please enter a valid phone number.
                     </p>
                   )}
@@ -292,6 +278,11 @@ const Signup = () => {
                   onChange={() => setTermsChecked(!termsChecked)}
                   checked={termsChecked}
                 />
+                {!termsChecked && (
+                  <p className="error-message1">
+                    Please agree to the Terms & Conditions.
+                  </p>
+                )}
               </Form.Group>
             </div>
             <button
@@ -299,13 +290,11 @@ const Signup = () => {
                 termsChecked ? "active" : ""
               }`}
               disabled={!termsChecked}
-              onClick={handleSubmit} // Add your actual onClick function
+              onClick={handleSubmit}
             >
               Sign up
             </button>
-            {!termsChecked && (
-              <p className="error-message1">{generalErrorMessage}</p>
-            )}
+           
             <p className="login-para sign-para">
               You can edit your job once you signup to PyjamaHR
             </p>
@@ -313,6 +302,7 @@ const Signup = () => {
         </Col>
       </Row>
       <hr />
+      <div className="logo-container">
       <Row>
         <Col>
           <img
@@ -359,6 +349,7 @@ const Signup = () => {
           />
         </Col>
       </Row>
+      </div>
     </Container>
   );
 };

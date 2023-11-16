@@ -210,3 +210,9 @@
   transform: translateY(-50%);
   z-index: 1; /* Ensure it's above other elements */
 }
+
+
+.errormess2{
+  position: relative;
+  bottom: 23px;
+}

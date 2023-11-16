@@ -23,7 +23,7 @@ function NavScrollExample(props) {
     <Navbar
       expand="lg"
       className={`navbar ${isLoginPage ? "showdown" : ""} ${
-        !isLoginPage && showNavbar ? "box-shadow" : ""
+        !isLoginPage && showNavbar ? "" : "box-shadow"
       }`}
     >
       <Container fluid>
@@ -67,7 +67,8 @@ function NavScrollExample(props) {
               >
                 Login
               </Nav.Link>
-              <Button className="btn1 ">
+              {/* ... (existing code) */}
+              <Button className="btn1" onClick={props.signupButtonClick}>
                 {props.signupText}
                 <span className="arrow-icon-hidden">
                   <ArrowCircleRight size={30} color="#FFFFFF" weight="fill" />
