@@ -34,10 +34,18 @@ const App = () => {
           signupText={signupText}
         />
         <Routes>
-          <Route path="/" element={<Home signupText={signupText} />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                signupText={signupText}
+                className="scroll-section center-content"
+              />
+            }
+          />
         </Routes>
         <Routes>
-          <Route path="/" element={<MyCard />} />
+          <Route path="/" element={<MyCard className="scroll-section" />} />
         </Routes>
         <Routes>
           <Route
@@ -136,7 +144,6 @@ const App = () => {
         <Routes>
           {/* Add a new route for the Login component */}
           <Route path="/login" element={<Login />} />
-         
         </Routes>
         <Routes>
           {/* ... other routes */}

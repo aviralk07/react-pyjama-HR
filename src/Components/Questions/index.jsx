@@ -4,14 +4,14 @@ import "./style.css";
 const Questions = () => {
   const initialData = [
     {
-      question: "How much do I have to pay to use PyjamaHR?",
+      question: "Is PyjamaHR free to use?",
       subtitle:
-        "Enjoy access to PyjamaHR at absolutely no cost— it's a completely free ATS platform tailored to meet your hiring needs.",
+        "Absolutely! PyjamaHR is a completely free applicant tracking system (ATS) platform designed to cater to all your recruitment needs without any cost.",
     },
     {
-      question: "Can I register using my personal Gmail or Outlook account?",
+      question: "Is there a demo available for PyjamaHR?",
       subtitle:
-        "We require registrations through a work email address, personal emails like Gmail or Outlook aren't accepted.",
+        "Yes, you can watch our demo video to see our software in action, get a firsthand look at its features, and understand its benefits.",
     },
     {
       question: "Is it possible to post job openings through PyjamaHR?",
@@ -66,7 +66,8 @@ const Questions = () => {
           information you need.
         </h5>
       </div>
-      <br /><br />
+      <br />
+      <br />
 
       <div className="container3">
         <div className="row">

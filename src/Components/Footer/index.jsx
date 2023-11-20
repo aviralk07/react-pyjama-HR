@@ -1,11 +1,15 @@
-import React from "react";
+import React  from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./style.css";
+
+
 function Footer() {
+  
+ 
   return (
-    <Container className="con-4-1">
+    <Container className="con-4-1" >
       <Row>
         <Col className="col-1">
           <img
@@ -75,7 +79,7 @@ function Footer() {
             src="https://framerusercontent.com/images/iVj4ZHOfqoBDGVH5H9r60oQHuBg.png"
             alt=""
             width={60}
-            className="img-logo2"
+            className="img-logo2 img-hap"
           />
         </Col>
 
@@ -100,7 +104,9 @@ function Footer() {
           </Row>
         </Col>
       </Row>
-      <br /><br /><br />
+      <br />
+      <br />
+      <br />
       <div className="grey-horizontal-line"></div>
       <div className="inc"> &copy;2023 Aurelium, Inc.</div>
     </Container>

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
-import { GoogleLogin } from "react-google-login";
+
 import "./style.css"; // Import the external CSS file
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { isValidPhoneNumber } from "libphonenumber-js";
+
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -21,9 +21,9 @@ const Signup = () => {
   const [termsChecked, setTermsChecked] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const responseGoogle = (response) => {
-    console.log(response);
-  };
+  // const responseGoogle = (response) => {
+  //   console.log(response);
+  // };
 
   const handlePhoneChange = (value) => {
     const numericValue = value.replace(/\D/g, ""); // Remove non-numeric characters
@@ -130,7 +130,7 @@ const Signup = () => {
             }`}
           >
             {/* Google Login Button */}
-            <GoogleLogin
+            {/* <GoogleLogin
               className="google-login1"
               clientId="YOUR_GOOGLE_CLIENT_ID"
               onSuccess={responseGoogle}
@@ -145,7 +145,7 @@ const Signup = () => {
               <span style={{ marginBottom: "60px", marginLeft: "70px" }}>
                 Log in with Google
               </span>
-            </GoogleLogin>
+            </GoogleLogin> */}
             <div className="login-options-container">
               <hr />
               <span className="login-option-text">

@@ -21,12 +21,12 @@ const MobileApp = (props) => {
   };
 
   return (
-    <div className="container2">
-      <div className="premium">
+    <div className="container2 mobile--app1">
+      <div className="premium premiup-app">
         {props.buttonProp}
-
+                                                                                
         <h2>
-          Now in your <span>pyjama</span> pockets too!{" "}
+          Now in your <span>pyjama</span> pockets too!
         </h2>
         <p>
           Always stay in the loop with the PyjamaHR mobile app, available on

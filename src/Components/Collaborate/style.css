@@ -1,3 +1,38 @@
 #collaborate {
   margin-top: -300px;
 }
+@media (max-width: 767px) {
+  .collab1{
+    order: 2; /* Change the order for smaller screens */
+  }
+
+  .collab2 {
+    order: 1; /* Change the order for smaller screens */
+  }
+  #collaborate{
+    margin-top: -60px;
+  }
+  .mobile-colla button{
+    margin-left: 20px;
+  }
+  .mobile-colla h4{
+    width: 400px;
+    text-align: left;
+    margin-left: 100px;
+
+  }
+
+  .mobile-colla p{
+    text-align: left;
+    margin-left: 80px;
+}
+.collab3 h4{
+  position: relative;
+  left: 30px;
+}
+.collab3 p{
+  position: relative;
+  left: 50px;
+}
+
+}

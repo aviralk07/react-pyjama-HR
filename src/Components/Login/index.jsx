@@ -71,7 +71,7 @@ const Login = () => {
   return (
     <Container className="container-center">
       <Row>
-        <Col>
+        <Col className="hide-on-mobile">
           <h1 className="main-heading">
             Recruitment software for companies that want to scale faster
           </h1>
@@ -181,14 +181,14 @@ const Login = () => {
               Log in
             </button>
             <p className="login-para">
-              Don't have an account ?<Link to="/signup">Click here</Link> to
+              Don't have an account ? <Link to="/signup">Click here</Link> to
               Signup
             </p>
           </div>
         </Col>
       </Row>
       <hr />
-      <Row>
+      <Row className="hide-on-mobile">
         <Col>
           <img
             src="https://app.pyjamahr.com/_next/static/image/public/images/sugar_logo.e610d15f3f7bbf6f677184e09147051c.svg"
@@ -211,7 +211,7 @@ const Login = () => {
           />
         </Col>
       </Row>
-      <Row>
+      <Row className="hide-on-mobile">
         <Col>
           <img
             src="https://app.pyjamahr.com/_next/static/image/public/images/volopay_logo.a7cca95b18999fcf68f6f32a568bab8a.svg"

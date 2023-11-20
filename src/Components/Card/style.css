@@ -16,35 +16,4 @@
 }
 
 /* Media query for small screens (up to 576px) */
-@media (max-width: 576px) {
-  .card {
-    margin-top: 10px;
-  }
 
-  .card-title {
-    left: 0;
-    font-size: 10px;
-  }
-}
-
-/* Media query for medium screens (577px - 768px) */
-@media (min-width: 577px) and (max-width: 768px) {
-  .card {
-    margin-top: 15px;
-  }
-
-  .card-title {
-    left: 25px;
-  }
-}
-
-/* Media query for large screens (769px and above) */
-@media (min-width: 769px) {
-  .card {
-    margin-top: 30px;
-  }
-
-  .card-title {
-    left: 50px;
-  }
-}

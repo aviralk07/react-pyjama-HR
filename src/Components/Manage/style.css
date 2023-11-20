@@ -6,7 +6,61 @@
   margin-top: -100px;
 }
 
+
+
+.col1 {
+  text-align: center;
+}
+
 .feature-img1 {
   margin-left: 3px;
   margin-top: 40px;
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 767px) {
+  .row1 {
+    flex-direction: column; /* Stack columns in mobile view */
+  }
+
+  .col1 {
+    margin-bottom: 20px; /* Add spacing between columns in mobile view */
+  }
+
+  .feature-img1 {
+    margin-left: 0; /* Remove left margin in mobile view */
+    margin-top: 20px; /* Adjust top margin in mobile view */
+  }
+
+  .mobileview1{
+    position: relative;
+    bottom: 400px;
+    margin-left: 36px;
+   width: 360px;
+  }
+  .mobileview1-1{
+    position: relative;
+    top: 440px;
+  }
+
+  .mobileview1-1 h4{
+    font-size: 21px;
+    width: 300px;
+    text-align: left;
+    margin-left: 60px;
+  }
+  .mobileview1-1 p{
+    position: relative;
+    right: 30px;
+    text-align: left;
+  }
+  .user-details-1 h4{
+    position: relative;
+    left: 20px;
+  }
+  .user-details-1 p{
+    position: relative;
+    left: 13px;
+  }
+ 
 }

@@ -1,13 +1,38 @@
-import React from "react";
-import "./style.css"; // You can define your CSS styles in this file.
+import React, { useEffect, useRef } from "react";
+import "./style.css";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Obvious() {
+  const obviousRef = useRef(null);
+
+  useEffect(() => {
+    // Set up GSAP animations for the Obvious component
+    gsap.fromTo(
+      obviousRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: obviousRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <div className="container-2">
+    <div className="container-2" ref={obviousRef}>
       <div className="row">
         <h1 className="obv-h1">More reasons why <span> we are the obvious choice</span></h1>
-        <div className="box">
-          <div className="content">
+        <div className="box box1-2">
+          <div className="content content1-2 ">
             <button className="icon-button">
               <img
                 src="https://framerusercontent.com/images/zqNAWAxKIgDgcqflAgMmLFQkLL0.png"
@@ -101,3 +126,4 @@ function Obvious() {
 }
 
 export default Obvious;
+

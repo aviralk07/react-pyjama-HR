@@ -1,4 +1,5 @@
-import React from "react";
+
+import React  from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,8 +7,12 @@ import "./style.css"; // Replace with your actual CSS file
 import Avatar from "react-avatar";
 import { ArrowCircleRight } from "@phosphor-icons/react";
 function HappyUser(props) {
+  
+
+
+
   return (
-    <Container>
+    <Container className="happy-con" >
       <Row className="row-with-border">
         <Col className="happyuser">
           <button className="btn3">
@@ -17,19 +22,18 @@ function HappyUser(props) {
           <h2>
             You've never made a hire this fast before. <span> Really.</span>
           </h2>
-          <button className="btn1">
-          
+          <button className="btn1 ha-btn">
             {props.signupText}
             <span className="arrow-icon-hidden">
               <ArrowCircleRight size={30} color="#FFFFFF" weight="fill" />
             </span>
           </button>
         </Col>
-        <Col>
+        <Col className="happy-u">
           <h5>
             <span>4000+</span> happy users
           </h5>
-          <Row>
+          <Row className="row-hap">
             <Avatar
               className="row-avt"
               text="Dunzo"
@@ -59,7 +63,7 @@ function HappyUser(props) {
               color="lightgrey"
             />
           </Row>
-          <Row>
+          <Row className="row-hap">
             <Avatar
               className="row-avt1"
               text="Dunzo"

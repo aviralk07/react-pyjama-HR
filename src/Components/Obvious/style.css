@@ -72,3 +72,45 @@
   font-weight: 400;
   font-size: 12px;
 }
+@media (max-width: 767px) {
+  .container-2 {
+    padding: 20px;
+    margin-top: 220px;
+    right: 200px;
+    position: relative;
+    text-align: center;
+  }
+
+  .obv-h1 {
+    position: relative !important;
+    left: 240px !important;
+    width: 270px;
+    margin-top: 90px;
+  }
+
+  .box  {
+    width: 250px;
+    margin-left: 70px;
+    height: 220px;
+  }
+  .box1{
+    width: 250px;
+    margin-left: 400px;
+    height: 220px;
+  }
+
+  .content h5 {
+    font-size: 17px !important;
+    position: relative;
+    top: 10px;
+  }
+
+  .content p {
+    position: relative;
+    bottom: 10px;
+    font-weight: 500;
+    width: 200px;
+  }
+
+ 
+}

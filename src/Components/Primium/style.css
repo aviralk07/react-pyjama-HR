@@ -72,3 +72,32 @@ body {
   bottom: 120px;
   left: 470px;
 }
+
+@media (max-width: 767px) {
+  .premium {
+    margin-left: 0px; /* Adjust the margin for smaller screens */
+    padding: 50px 10px; /* Adjust the padding for smaller screens */
+    height: 450px; /* Allow the height to be determined by content */
+    border-radius: 0;
+  }
+
+  .premium-img {
+    margin-right: 0; /* Remove margin-right for smaller screens */
+    margin-bottom: 20px; /* Add some space below the image for smaller screens */
+    position: static; /* Reset position for smaller screens */
+  }
+
+  .premium-img1 {
+    left: 0; /* Adjust left position for smaller screens */
+    bottom: 0; /* Adjust bottom position for smaller screens */
+  }
+
+  .premium h2{
+    text-align: center;
+  }
+  .premium p{
+    text-align: center;
+    width: 330px;
+    font-size: 17px;
+  }
+}

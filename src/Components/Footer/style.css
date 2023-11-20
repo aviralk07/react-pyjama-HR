@@ -1,7 +1,5 @@
- .con-4-1 {
+.con-4-1 {
   margin-top: 100px;
- 
-
 }
 
 .img-log1 {
@@ -26,7 +24,7 @@
   margin-left: 20px;
 }
 
-.footer-h4{
+.footer-h4 {
   font-size: 15px;
   margin-left: 340px;
   font-weight: 450;
@@ -40,11 +38,10 @@
   position: relative;
   left: 140px;
 }
- 
 
 .grey-horizontal-line {
-  border-top: 1px solid rgb(220, 220, 220); 
-  width: 80%; 
+  border-top: 1px solid rgb(220, 220, 220);
+  width: 80%;
 }
 
 .inc {
@@ -56,42 +53,66 @@
   right: 490px;
 }
 
-
 @media (max-width: 768px) {
-    .con-4-1 {
-      margin-top: 50px; /* Adjust as needed */
-      
-    }
-  
-    .col-1 {
-      bottom: 0;
-      margin-right: 0;
-      left: 0;
-     
-    }
-  
-    .col-1 img {
-        width: 20px; /* Adjust the width for mobile screens */
-      }
-    .col-p,
-    .col-p1 {
-      margin-left: 0;
-    }
-  
-    .footer-h4 {
-      margin-left: 0;
-      right: 0;
-    }
-  
-    .img-logo2 {
-      left: 0;
-    }
-  
-    .grey-horizontal-line {
-      width: 100%;
-    }
-  
-    .inc {
-      right: 0;
-    }
+  .con-4-1 {
+    margin-top: 50px; /* Adjust as needed */
   }
+
+  .col-1 {
+    bottom: 0;
+    margin-right: 0;
+    left: 0;
+    width: 80px;
+    position: relative;
+    left: 30px;
+    text-align: center;
+  }
+
+  .col-1 img {
+    width: 50px; /* Adjust the width for mobile screens */
+  }
+
+  .col-p,
+  .col-p1 {
+    margin-left: 0;
+  }
+  .img-logo2 {
+    margin-top: 50px !important;
+    width: 150px;
+    margin-left: 40px;
+  }
+
+  .footer-h4 {
+    margin-left: 40px;
+    right: 0;
+    font-size: 15px; /* Decrease font size for mobile screens */
+    line-height: 24px; /* Adjust line height for better readability */
+    margin-top: 10px; /* Adjust margin for better spacing */
+    position: static; /* Remove the relative positioning */
+    width: 300px;
+  }
+
+  .img-logo2 {
+    left: 0;
+    margin-top: 10px; /* Adjust margin for better spacing */
+  }
+
+  .grey-horizontal-line {
+    width: 100%;
+  }
+
+  .inc {
+    right: 0;
+  }
+  .img-hap {
+    width: 70px;
+    margin-top: 10px !important;
+  }
+  .col-p p,
+  .col-p1 p {
+    font-size: 15px !important;
+    line-height: 30px !important;
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+}

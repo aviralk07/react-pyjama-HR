@@ -1,5 +1,7 @@
 /* style.css */
-
+.happy-con {
+  margin-top: 100px;
+}
 .row-with-border {
   border: 2px solid rgb(238, 238, 238);
   padding: 110px;
@@ -84,8 +86,50 @@ h5 span {
   position: relative;
   left: 20px;
   margin-bottom: 20px;
-  
 }
 .row-avt1 {
   margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .row-with-border {
+    padding: 20px; /* Adjust padding for smaller screens */
+    width: 350px;
+  }
+
+  .happyuser .btn3 {
+    right: 0; /* Adjust the position for smaller screens */
+  }
+
+  .happyuser .btn1 {
+    left: 0; /* Adjust the position for smaller screens */
+    margin-right: 0; /* Remove right margin */
+  }
+
+  .happyuser button {
+    margin-top: 50px;
+  }
+  .happyuser h2 {
+    width: 300px;
+    text-align: center;
+    position: relative;
+    right: 10px;
+    font-size: 30px;
+  }
+
+  .happy-u {
+    margin-top: 130px;
+  }
+
+  .ha-btn {
+    margin-left: 80px !important;
+  }
+  .row-hap {
+    width: 600px;
+    position: relative;
+    right: 25px;
+  }
+  .row-avt ,.row-avt1 {
+    width: 50px !important;
+    height: 50px !important;
+  }
 }

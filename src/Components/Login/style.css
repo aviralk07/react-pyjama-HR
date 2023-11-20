@@ -7,9 +7,7 @@
   align-items: center;
   position: relative;
   left: 70px;
-  bottom: 150px;
-
-  
+  bottom: 100px;
 }
 .container-center {
   overflow: hidden !important;
@@ -69,7 +67,6 @@
   background-color: snow;
   border-radius: 20px;
   font-family: Poppins, "sans-serif";
-
 }
 .error-container1 {
   height: 440px;
@@ -206,13 +203,158 @@
   position: relative;
   left: 84%;
   bottom: 20px;
- /* Adjust the top value to center vertically */
+  /* Adjust the top value to center vertically */
   transform: translateY(-50%);
   z-index: 1; /* Ensure it's above other elements */
 }
 
-
-.errormess2{
+.errormess2 {
   position: relative;
   bottom: 23px;
+}
+
+/* Add the following media queries at the end of your CSS file */
+
+/* Mobile Devices */
+@media only screen and (max-width: 767px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .container-center {
+    left: 0;
+    bottom: 0;
+    overflow-y: hidden !important;
+  }
+  .login-container {
+    overflow-y: hidden !important;
+    /* ... other styles ... */
+  }
+  .main-heading {
+    font-size: 18px;
+    width: 350px;
+    margin-left: 100px;
+    text-align: center;
+  }
+
+  .sub-heading {
+    margin-left: 0;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .list-item {
+    margin-left: 70px;
+    font-size: 11px;
+    width: 360px;
+  }
+
+  .heading-h6 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  #hr-login {
+    margin-left: 0;
+  }
+
+  .login-container {
+    width: 380px;
+    height: 420px;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 200px;
+  }
+
+  .google-login1 {
+    width: 350px;
+    margin-left: 15px;
+    margin-top: 20px;
+  }
+
+  .login-options-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .login-options-container hr {
+    width: 140px !important;
+  }
+
+  .login-option-text {
+    margin: 0;
+    width: 250px !important;
+    font-size: 12px;
+  }
+
+  .username1,
+  .username2 {
+    width: 100% !important;
+    margin-left: 12px;
+    width: 350px !important;
+  }
+
+  .login-button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .login-para {
+    margin-left: 0;
+  }
+
+  .logo-login {
+    width: 80px;
+    margin-top: 20px;
+    margin-right: 10px;
+    right: 0;
+    bottom: 0;
+  }
+
+  .logo-login1 {
+    transform: scale(1);
+  }
+
+  .log-btn1 {
+    left: 80%;
+    bottom: 10px;
+  }
+
+  .errormess2 {
+  }
+
+  .svg-inline--fa {
+    bottom: 10px;
+    position: relative;
+    left: 10px;
+  }
+
+  #username3 {
+    right: 12px;
+  }
+  .login-button {
+    width: 350px;
+    margin-left: 10px;
+    bottom: 20px;
+    position: relative;
+  }
+
+  .login-para {
+    margin-left: 30px;
+    font-size: 14px;
+    text-decoration: none;
+    bottom: 20px;
+    position: relative;
+    
+  }
+  .login-para a {
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
+/* iPad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Add specific styles for iPad if needed */
 }

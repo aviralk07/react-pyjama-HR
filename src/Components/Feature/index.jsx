@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./style.css";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Features = ({ avatarSrc, username, bio }) => {
+  const featureRef = useRef(null);
+
+  useEffect(() => {
+    // Set up GSAP animations for the Features component
+        // Check if the screen width is greater than 767 pixels (not a mobile device)
+        if (window.innerWidth > 767) {
+          // Set up GSAP animations for the Features component
+          gsap.fromTo(
+            featureRef.current,
+            { opacity: 0, y: 50 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 2,
+              scrollTrigger: {
+                trigger: featureRef.current,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+        }
+      }, []);
+      
+
   return (
-    <Container className="container"  id="Feature">
+    <Container className="container" id="Feature" ref={featureRef}>
       <Row className="row1">
         <h1 className="text-h1">
-          Why 4000+ companies around the world <span> choose PyjamaHR </span>
+          Why  4000+ companies around the world <span> choose PyjamaHR </span>
         </h1>
         <Col xs={12} md={6}>
           <Image
@@ -37,7 +68,6 @@ const Features = ({ avatarSrc, username, bio }) => {
               <br />
             </div>
           </div>
-          
         </Col>
       </Row>
     </Container>

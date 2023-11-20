@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import "./style.css";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Evaluate = ({ avatarSrc, username, bio }) => {
+  const evaluateRef = useRef(null);
+
+  useEffect(() => {
+    // Set up GSAP animations for the Evaluate component
+    gsap.fromTo(
+      evaluateRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: evaluateRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <Container className="container" id="evaluate">
+    <Container className="container" id="evaluate" ref={evaluateRef}>
       <Row className="row1">
         <Col xs={12} md={6}>
           <Image
-            className="feature-img"
+            className="feature-img mobile-view2"
             src="https://framerusercontent.com/images/q7dB4SG1OZYbFanadCauatXFyM.png"
             alt="Horizon"
             width={500}
@@ -40,3 +66,4 @@ const Evaluate = ({ avatarSrc, username, bio }) => {
 };
 
 export default Evaluate;
+

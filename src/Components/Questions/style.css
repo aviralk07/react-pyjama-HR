@@ -74,5 +74,60 @@
   margin-top: 17px;
 }
 
-.toggle-button:hover {
+@media (max-width: 767px) {
+  .ques-head {
+    margin-top: 100px;
+  }
+  .ques-head h1 {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .ques-head h5 {
+    width: 100%; /* Full width for smaller screens */
+    margin-left: 27px; /* Remove left margin */
+    font-size: 15px !important;
+    width: 300px;
+  }
+
+  .ques-head button {
+    margin-left: 50%; /* Center the button on smaller screens */
+    transform: translateX(-50%);
+  }
+
+  .outer-container {
+    width: 100%; /* Full width for smaller screens */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .outer-container h3 {
+    font-size: 16px; /* Decrease font size for smaller screens */
+  }
+
+  .outer-container h4 {
+    width: 100%; /* Full width for smaller screens */
+    font-size: 14px; /* Decrease font size for smaller screens */
+  }
+
+  .toggle-button {
+    font-size: 24px; /* Increase font size for smaller screens */
+    margin-right: 0; /* Remove right margin */
+    position: static; /* Remove absolute positioning */
+    margin-top: 0; /* Remove top margin */
+  }
+
+  .toggle-button {
+    position: relative;
+    left: 300px;
+    font-size: 32px;
+    top: 20px;
+  }
+
+  .outer-container h3 {
+    position: relative !important;
+    bottom: 20px !important;
+    width: 280px;
+    margin-left: 10px;
+    font-weight: 500 !important;
+  }
 }
