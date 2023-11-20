@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import NavScrollExample from "./Components/Header";
@@ -16,6 +16,7 @@ import HappyUser from "./Components/HappyUser";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
 import Signup from "./Components/Sign-up";
+
 const App = () => {
   const signupText = "Signup for FREE"; // Define the signupText here
   const signupText1 = "Know more"; // Define the signupText here
@@ -26,6 +27,38 @@ const App = () => {
       MOBILE APP
     </button>
   );
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+      }
+    };
+
+    const enableScroll = () => {
+      document.removeEventListener("wheel", handleScroll, { passive: false });
+    };
+
+    const disableScroll = () => {
+      document.addEventListener("wheel", handleScroll, { passive: false });
+    };
+
+    if (window.innerWidth <= 768) {
+      disableScroll();
+    }
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 768) {
+        disableScroll();
+      } else {
+        enableScroll();
+      }
+    });
+
+    return () => {
+      enableScroll(); // Cleanup to enable scrolling when component unmounts
+    };
+  }, []);
   return (
     <Router>
       <div className="App">

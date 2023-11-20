@@ -53,7 +53,7 @@ const Evaluate = ({ avatarSrc, username, bio }) => {
           <br />
           <div className="user-profile">
             <img src={avatarSrc} alt="User Avatar" className="avatar" />
-            <div className="user-details">
+            <div className="user-details euser">
               <h4>{username}</h4>
               <p>{bio}</p>
               <br />

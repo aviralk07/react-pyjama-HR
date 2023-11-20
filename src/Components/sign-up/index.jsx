@@ -90,7 +90,7 @@ const Signup = () => {
   // Check all validation states
 
   return (
-    <Container className="container-center1">
+    <Container className="container-center1 signUP">
       <br />
       <br />
       <br />
@@ -200,7 +200,7 @@ const Signup = () => {
   />
   <div className="fa-btn1-container">
     <button
-      className="fa-btn1"
+      className="fa-btn1 fa-btn11"
       type="button"
       onClick={togglePasswordVisibility}
     >
@@ -252,7 +252,7 @@ const Signup = () => {
                     }`} // Assign a className
                   />
                   {!isValidPhone && (
-                    <p className="error-message erro-mess">
+                    <p className="error-message erro-mess err-sign">
                       Please enter a valid phone number.
                     </p>
                   )}
@@ -264,7 +264,7 @@ const Signup = () => {
               {/* Your other signup content goes here */}
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
-                  className="check1"
+                  className="check1 check11"
                   type="checkbox"
                   label={
                     <span>

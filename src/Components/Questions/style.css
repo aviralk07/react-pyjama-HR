@@ -93,6 +93,8 @@
   .ques-head button {
     margin-left: 50%; /* Center the button on smaller screens */
     transform: translateX(-50%);
+    position: relative;
+    right: 60px;
   }
 
   .outer-container {

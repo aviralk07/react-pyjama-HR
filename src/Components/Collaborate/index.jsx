@@ -58,7 +58,7 @@ const Collaborate = ({ avatarSrc, username, bio }) => {
         </Col>
         <Col xs={12} md={6} className="collab2">
           <Image
-            className="feature-img feature-img1  "
+            className="feature-img feature-img1 collab2-1  "
             src="https://framerusercontent.com/images/Q0DY2RgvRYOv53udNbTs05f0Wo.png"
             alt="Horizon"
             width={600}

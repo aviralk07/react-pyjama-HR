@@ -132,8 +132,8 @@
   .col1 p {
     font-size: 15px;
     width: 340px;
-    margin-left: 70px;
-    text-align: center;
+    margin-left: 75px;
+    text-align: left;
   }
 
   .avatar {
@@ -157,5 +157,6 @@
     position: relative;
     right: 12px;
     font-size: 12px;
+    left: 50px;
   }
 }

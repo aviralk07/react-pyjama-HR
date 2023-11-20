@@ -132,14 +132,38 @@
   margin-right: -20px;
 }
 
-
 .logo-sign {
   bottom: 270px;
- 
-  
 }
 
 .erro-mess {
   position: relative;
   bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .logo-container {
+    display: none; /* Hide the logo container on smaller screens */
+    overflow-x: hidden;
+  }
+
+  .main-heading,
+  .sub-heading,
+  .list-item-heading,
+  .heading-h6,
+  #hr-login {
+    display: none; /* Hide these elements on smaller screens */
+  }
+  .err-sign {
+    width: 700px !important;
+    position: relative;
+    top: 10px;
+  }
+  .check11 {
+    margin-top: -45px;
+  }
+
+  .fa-btn11 {
+    top: -10px;
+  }
 }

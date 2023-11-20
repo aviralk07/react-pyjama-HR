@@ -10,5 +10,9 @@
      width: 340px;
      margin-left: 100px;
   }
+  .euser p{
+    position: relative;
+    left: 50px;
+  }
 
 }
