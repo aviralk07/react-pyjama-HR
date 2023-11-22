@@ -31,8 +31,8 @@ const Manage = ({ avatarSrc, username, bio }) => {
   return (
     <Container className="container" id="manage" ref={manageRef}>
       <Row className="row1">
-        <Col xs={12} md={6} className="col1 col2 mobileview1-1 ">
-          <button className="btn3">Manage</button>
+        <Col xs={12} md={6} className="col1 col2 mobileview1-1 manage-1 ">
+          <button className="btn3 btn3-3">Manage</button>
           <h4>Manage your talent pool, effortlessly.</h4>
 
           <p>
@@ -42,7 +42,7 @@ const Manage = ({ avatarSrc, username, bio }) => {
             top of good talent."
           </p>
           <br />
-          <div className="user-profile ">
+          <div className="user-profile manage-profile1 ">
             <img src={avatarSrc} alt="User Avatar" className="avatar" />
             <div className="user-details user-details-1">
               <h4>{username}</h4>
@@ -56,7 +56,7 @@ const Manage = ({ avatarSrc, username, bio }) => {
         </Col>
         <Col xs={12} md={6}>
           <Image
-            className="feature-img feature-img1 mobileview1 "
+            className="feature-img feature-img1 mobileview1 manage-img "
             src="https://framerusercontent.com/images/XfS3FWY8JQyEcCgA303iEda29Vk.png?scale-down-to=1024"
             alt="Horizon"
             width={500}

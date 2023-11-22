@@ -2,17 +2,20 @@
   margin-top: -350px;
 }
 @media (max-width: 767px) {
-  #evaluate{
+  #evaluate {
     margin-top: -100px;
   }
 
-  .mobile-view2{
-     width: 340px;
-     margin-left: 100px;
+  .mobile-view2 {
+    width: 340px;
+    margin-left: 100px;
   }
-  .euser p{
+  .euser p {
     position: relative;
-    left: 50px;
+    left: 5px;
   }
-
+  .evaluate-1 {
+    position: relative;
+    left: 150px;
+  }
 }

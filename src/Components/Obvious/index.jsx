@@ -28,7 +28,7 @@ function Obvious() {
   }, []);
 
   return (
-    <div className="container-2" ref={obviousRef}>
+    <div className="container-2 " ref={obviousRef}>
       <div className="row">
         <h1 className="obv-h1">More reasons why <span> we are the obvious choice</span></h1>
         <div className="box box1-2">

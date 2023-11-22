@@ -33,7 +33,7 @@ const Evaluate = ({ avatarSrc, username, bio }) => {
       <Row className="row1">
         <Col xs={12} md={6}>
           <Image
-            className="feature-img mobile-view2"
+            className="feature-img mobile-view2 evaluate-1"
             src="https://framerusercontent.com/images/q7dB4SG1OZYbFanadCauatXFyM.png"
             alt="Horizon"
             width={500}
@@ -53,7 +53,7 @@ const Evaluate = ({ avatarSrc, username, bio }) => {
           <br />
           <div className="user-profile">
             <img src={avatarSrc} alt="User Avatar" className="avatar" />
-            <div className="user-details euser">
+            <div className="user-details euser e-user1">
               <h4>{username}</h4>
               <p>{bio}</p>
               <br />

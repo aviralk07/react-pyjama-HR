@@ -57,24 +57,23 @@
 .btn1-1 {
   padding: 15px 44px 15px 34px;
   font-size: 20px;
- 
+
   margin-top: 20px;
   animation: slideIn 2s ease-in-out 1s forwards;
 }
 
-.btn-demo{
-  padding: 13px 40px ;
+.btn-demo {
+  padding: 13px 40px;
   font-size: 20px;
- border: 1px solid gray;
+  border: 1px solid gray;
   margin-top: 20px;
   background-color: white;
- font-weight: 700;
- font-family: Poppins, sans-serif;
- border-radius: 10px;
- position: relative;
- right: 70px;
- top: 10px;
-
+  font-weight: 700;
+  font-family: Poppins, sans-serif;
+  border-radius: 10px;
+  position: relative;
+  right: 70px;
+  top: 10px;
 }
 
 /* externalStyles.css */
@@ -128,7 +127,7 @@
     top: 120px;
     width: 300px;
   }
-  .btn-demo{
+  .btn-demo {
     left: 40px;
     top: 120px;
     padding: 15px 90px; /* Adjust as needed */
@@ -146,15 +145,19 @@
   }
   @keyframes scrollMarquee {
     0% {
-      transform: translateX(900%); /* Start off the screen on the right */
+      transform: translateX(600%); /* Start off the screen on the right */
     }
     100% {
-      transform: translateX(-900%); /* Move off the screen on the left */
+      transform: translateX(-600%); /* Move off the screen on the left */
     }
   }
-}
-  
+  .img-logo-image {
+    /* Existing styles */
 
+    /* Add the animation properties */
+    animation: scrollMarquee 5000ms linear infinite !important;
+  }
+}
 
 /* Apply the animation to the images */
 .img-logo-image {

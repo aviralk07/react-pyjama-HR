@@ -9,10 +9,6 @@
   left: 70px;
   bottom: 100px;
 }
-.container-center {
-  overflow: hidden !important;
-  overflow-y: hidden !important;
-}
 
 /* Styles for the main heading */
 .main-heading {
@@ -222,14 +218,11 @@
   }
 
   .container-center {
-    left: 0;
-    bottom: 0;
-    overflow-y: hidden !important;
+    position: relative !important;
+    left: 0 !important;
+    top: 500px !important;
   }
-  .login-container {
-    overflow-y: hidden !important;
-    /* ... other styles ... */
-  }
+
   .main-heading {
     font-size: 18px;
     width: 350px;
@@ -321,9 +314,6 @@
     bottom: 10px;
   }
 
-  .errormess2 {
-  }
-
   .svg-inline--fa {
     bottom: 10px;
     position: relative;
@@ -346,7 +336,6 @@
     text-decoration: none;
     bottom: 20px;
     position: relative;
-    
   }
   .login-para a {
     text-decoration: none;

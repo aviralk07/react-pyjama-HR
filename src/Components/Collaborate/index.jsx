@@ -45,7 +45,7 @@ const Collaborate = ({ avatarSrc, username, bio }) => {
           </p>
           <br />
           <div className="user-profile">
-            <img src={avatarSrc} alt="User Avatar" className="avatar" />
+            <img src={avatarSrc} alt="User Avatar" className="avatar avtar-coll" />
             <div className="user-details collab3">
               <h4>{username}</h4>
               <p>{bio}</p>

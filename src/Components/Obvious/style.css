@@ -79,6 +79,7 @@
     right: 200px;
     position: relative;
     text-align: center;
+    margin-top: 350px;
   }
 
   .obv-h1 {
@@ -88,12 +89,12 @@
     margin-top: 90px;
   }
 
-  .box  {
+  .box {
     width: 250px;
     margin-left: 70px;
     height: 220px;
   }
-  .box1{
+  .box1 {
     width: 250px;
     margin-left: 400px;
     height: 220px;
@@ -113,6 +114,4 @@
     font-weight: 500;
     width: 200px;
   }
-
- 
 }

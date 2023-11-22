@@ -1,6 +1,15 @@
 #collaborate {
   margin-top: -300px;
 }
+
+.collab1 {
+  position: relative;
+  left: 120px;
+  top: 70px;
+}
+.collab1 p {
+  width: 540px;
+}
 @media (max-width: 767px) {
   .collab1 {
     order: 2; /* Change the order for smaller screens */
@@ -10,29 +19,39 @@
     order: 1; /* Change the order for smaller screens */
   }
   .collab2-1 {
-    margin-left: 40px !important;
+    margin-left: 200px !important;
+    position: relative;
+    top: 20px;
   }
   #collaborate {
     margin-top: -60px;
   }
   .mobile-colla button {
-    margin-left: 20px;
+    position: relative;
+    left: 130px;
   }
   .mobile-colla h4 {
     width: 400px;
     text-align: left;
-    margin-left: 100px;
+    position: relative;
+    left: 130px;
   }
 
   .mobile-colla p {
     text-align: left;
-    margin-left: 80px;
+    margin-left: 120px;
+    width: 350px;
+    position: relative;
   }
   .collab3 h4 {
     position: relative;
-    left: 30px;
+    left: 60px;
   }
   .collab3 p {
+    position: relative;
+    left: -60px;
+  }
+  .avtar-coll {
     position: relative;
     left: 50px;
   }
